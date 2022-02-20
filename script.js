@@ -52,6 +52,32 @@ return convert(cases);
 }
 
 
+function convertToRoman(num) {
+    var roman = {
+      M: 1000,
+      CM: 900,
+      D: 500,
+      CD: 400,
+      C: 100,
+      XC: 90,
+      L: 50,
+      XL: 40,
+      X: 10,
+      IX: 9,
+      V: 5,
+      IV: 4,
+      I: 1
+    };
+    var str = '';
+    
+    for (var i of Object.keys(roman)) {
+      var q = Math.floor(num / roman[i]);
+      num -= q * roman[i];
+      str += i.repeat(q);
+    }
+    return str;
+  }
+
 
 // creating element event in script instead of onClick on script loading 
 // function run huna kuki apa button nu id diti aa 'clickme'
@@ -64,4 +90,8 @@ document.getElementById("clickme").addEventListener("click", function() {
     document.getElementById("p").innerHTML = inWordsVal;
     // get the id p=of another paragraph and put the number value i.e '8' in it
     document.getElementById("p1").innerHTML = val;
+    var str = convertToRoman(val)
+    document.getElementById("p3").innerHTML = str;
+
+
   });
