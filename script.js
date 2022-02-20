@@ -53,7 +53,17 @@ return convert(cases);
 
 
 function convertToRoman(num) {
+
     var roman = {
+      "((M))":1000000000,
+      "((C))":100000000,
+      "((L))":50000000,	
+      "((X))":10000000,
+      X̅:10000,
+      V̅:5000,
+      MMMM:4000,
+      MMM:3000,
+      MM:2000,
       M: 1000,
       CM: 900,
       D: 500,
@@ -75,6 +85,9 @@ function convertToRoman(num) {
       num -= q * roman[i];
       str += i.repeat(q);
     }
+
+  
+    
     return str;
   }
 
@@ -83,8 +96,14 @@ function convertToRoman(num) {
 // function run huna kuki apa button nu id diti aa 'clickme'
     var el = document.getElementById('clickme');
     el.addEventListener("click", function() {
-    // take the value from the text box and put it in val
+      // take the value from the text box and put it in val
     let val = document.getElementById('txt').value;
+      if(val.length>10){
+        alert("Please enter no more than 10 characters.")
+        let val = document.getElementById('txt').value="";
+      }
+else{
+    
     // pass the value to main() and get the in words 8=> eight and store it in variable
     var inWordsVal=main(val)
     // get the id of paragraph and put in words in it
@@ -95,6 +114,9 @@ function convertToRoman(num) {
     document.getElementById("p3").innerHTML = str;
 
 
+
+}    
+  
   });
    
   }
