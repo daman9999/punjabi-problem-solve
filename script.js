@@ -1,5 +1,5 @@
-// actual  conversion code starts here
-
+window.onload=function(){
+    // actual  conversion code starts here
 var ones = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
 var tens = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
 var teens = ['ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
@@ -81,7 +81,8 @@ function convertToRoman(num) {
 
 // creating element event in script instead of onClick on script loading 
 // function run huna kuki apa button nu id diti aa 'clickme'
-document.getElementById("clickme").addEventListener("click", function() {
+    var el = document.getElementById('clickme');
+    el.addEventListener("click", function() {
     // take the value from the text box and put it in val
     let val = document.getElementById('txt').value;
     // pass the value to main() and get the in words 8=> eight and store it in variable
@@ -95,3 +96,7 @@ document.getElementById("clickme").addEventListener("click", function() {
 
 
   });
+   
+  }
+
+
