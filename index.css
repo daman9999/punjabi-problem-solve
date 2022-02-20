@@ -1,0 +1,15 @@
+/* getting the font which we have downloaded and included in it */
+
+@font-face {
+    /* giving custom name [you can also name your name ] */
+    font-family: 'punjabi';
+    /* giving the address where we stored it. as it is in current folder we can write as it is */
+    src: url(GURAKH_H.TTF);
+}
+
+
+/* giving class because we have to convert it to punjabi font  */
+
+.punjabi {
+    font-family: 'punjabi';
+}
